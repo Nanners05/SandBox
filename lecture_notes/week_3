@@ -1,0 +1,6 @@
+# Casting
+int()
+str()
+float()
+bool()
+eval() # tries to figure out the best type

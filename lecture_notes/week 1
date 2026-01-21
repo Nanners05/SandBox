@@ -1,0 +1,42 @@
+# variables
+
+first_name = "lily"
+last_name = "bell"
+age = 365
+is_it_monday = False
+gas_price = 2.50
+
+
+# math
+
+age = 21
+age = age + 1
+age = age - 1
+age = age / 2
+age = age * 2
+age = age // 2
+age = age % 2
+age = age ** 2
+
+# print function
+
+print()
+print("Something new")
+print(age, first_name)
+
+# triple quite strings
+
+"""
+2.3 Description of the problem here
+"""
+
+"""
+Adam is running a half marathon. His avg mile time is 6:00.
+For the half (13.1), what is his projected finish time
+Output the result in this pormat
+hr:min:sec
+"""
+
+half = 13.1
+hour = 13.1 / 
+minute = 
