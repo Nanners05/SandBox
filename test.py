@@ -1,1 +1,0 @@
-print("Wow, we are ranked in USU basketball. I really really hope we beat Nevada tonight otherwise that")
