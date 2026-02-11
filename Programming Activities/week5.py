@@ -41,7 +41,7 @@ What number is the result?
 sum = 0
 denominator = 2
 
-for i in range(1000):
+for i in range(1,1000):
   sum += 1/denominator
   denominator *= 2
 print(i)
