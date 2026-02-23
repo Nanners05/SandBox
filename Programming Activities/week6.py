@@ -67,3 +67,62 @@ for i in nums:
             print("Two evens in a row")
     count += 1
 
+
+
+"""
+Programming Activity 5
+
+1. Download one year worth of stock data from yahoo finance. The instructions to do this are in the HW4 description.
+2. After you have one year worth of stock data, use a for loop to iterate through the data, and calculate the average for the entire data set.
+3. After you have calculated the average for the entire data set, see if you can calculate the average for the first 5 days only.  
+(you will need this logic for your homework).
+"""
+
+file = open("/workspaces/SandBox/Programming Activities/AAPL.2023.txt")
+file_lines = file.readlines()
+
+prices = []
+for i in file_lines:
+    prices.append(float(i))
+
+total_avg = sum(prices) / len(prices)
+print("Total average price:", total_avg)
+
+avg_5_days = sum(prices[0:5]) / len(prices[0:5])
+print("Average of 5 days:", avg_5_days)
+
+
+"""
+Programming Activity 5.2 
+This activity is a continuation from the last one and is meant to help you with your homweork.
+Write a Python program to read in the stock prices from a file, into a list.
+Create a list of floats from the list of strings you read in, from step 2.
+Calculate the average of the first 4 days in your list.
+Calculate the average of the last 4 days in your list.
+In a for loop, calculate a 4 day moving average for the floats in the list.
+Add logic in the for loop to implement a simple moving average 
+trading strategy.
+Display the profit from the strategy, after the for loop has finished.
+"""
+four_day_avg = sum(prices[0:4]) / len(prices[0:4])
+last_four_day_avg = sum(prices[-4:]) / 4
+
+j = 0
+buy = 0
+total_profit = 0
+
+for i in prices:
+    if j >= 4:
+        avg = (prices[int(i)] + prices[int(i - 1)] + prices[int(i - 2)] + prices[int(i - 3)]) / 4
+        if i < avg and buy == 0:
+            buy = i
+            print("Buying at:", "\t", i)
+        elif i > avg and buy != 0: 
+            trade_profit = i - buy
+            print("Selling at:", "\t", i)
+            print("Trade profit:", "\t", trade_profit)
+            total_profit += trade_profit
+            buy = 0        
+    j += 1
+   
+print("total_profit:", "\t", total_profit)
